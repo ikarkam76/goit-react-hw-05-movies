@@ -1,4 +1,5 @@
-import { getMovies } from "components/Services/getmovies";
+import { Link } from "react-router-dom";
+import { getMovies } from "Services/getmovies";
 import { useState, useEffect } from "react";
 
 
@@ -11,16 +12,16 @@ export const Home = () => {
     });
   }, [])
 
-  console.log(movies);
-
   return (
     <div>
       <h2>Trending movies today</h2>
       <ul>
-        {movies.map(movie => {
+        {movies.map(({id ,title}) => {
           return (
-            <li key={movie.id}>{movie.title}</li>
-         )
+            <li key={id}>
+              <Link to={`movies/${id}`}>{title}</Link>
+            </li>
+          );
        })}
       </ul>
     </div>
