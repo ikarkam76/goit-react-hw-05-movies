@@ -13,6 +13,7 @@ export const Header = styled.header`
   justify-content: space-between;
   padding: 8px 16px;
   margin-bottom: 16px;
+  background-color: lightgray;
   border-radius: 4px;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.4);
 

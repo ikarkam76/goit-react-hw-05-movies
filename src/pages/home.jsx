@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { getMovies } from "Services/getmovies";
 import { useState, useEffect } from "react";
+import { HomeContainer } from "./Home.styled";
 
 
 export const Home = () => {
@@ -13,7 +14,7 @@ export const Home = () => {
   }, [])
 
   return (
-    <div>
+    <HomeContainer>
       <h2>Trending movies today</h2>
       <ul>
         {movies.map(({id ,title}) => {
@@ -24,7 +25,7 @@ export const Home = () => {
           );
        })}
       </ul>
-    </div>
+    </HomeContainer>
   )
 };
 
