@@ -12,3 +12,33 @@ export const getMovies = async (searchOption) => {
     }
 };
 
+export const getMovieByID = async (id) => {
+    try {
+        const response = await axios.get(`${API_URL}/movie/${id}?api_key=${API_KEY}`);
+        return response;
+    } catch (error) {
+        return console.error(error.message);
+    }
+}
+
+export const getMovieCastById = async (id) => {
+    try {
+        const response = await axios.get(
+          `${API_URL}/movie/${id}/credits?api_key=${API_KEY}`
+        );
+        return response;
+    } catch (error) {
+        return console.error(error.message);
+    }
+}
+
+export const getMovieReviewsById = async id => {
+  try {
+    const response = await axios.get(
+      `${API_URL}/movie/${id}/reviews?api_key=${API_KEY}`
+    );
+    return response;
+  } catch (error) {
+    return console.error(error.message);
+  }
+};

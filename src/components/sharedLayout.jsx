@@ -13,12 +13,12 @@ export const SharedLayout = () => {
           </nav>
           <Logo>
             <span role="img" aria-label="tv icon">
-              📺
+              🎥
             </span>{' '}
             Moviemania
           </Logo>
         </Header>
-        <Outlet/>
+        <Outlet />
       </Container>
     );
 }
