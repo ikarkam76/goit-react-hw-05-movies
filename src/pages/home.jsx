@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { getMovies } from "Services/getmovies";
+import { getMovies } from "../Services/getmovies";
 import { useState, useEffect } from "react";
 import { HomeContainer } from "./Home.styled";
 

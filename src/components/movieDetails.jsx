@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams, Outlet } from "react-router-dom";
-import { getMovieByID } from "Services/getmovies";
-import { CardContainer} from 'components/CardContainer';
+import { getMovieByID } from "../Services/getmovies";
+import { CardContainer} from './CardContainer';
 
 
 
