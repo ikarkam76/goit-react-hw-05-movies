@@ -1,10 +1,10 @@
 import { Movies } from 'pages/Movies';
 import { Routes, Route } from 'react-router-dom';
-import { Home } from 'pages/Home';
+import { Home } from 'pages/Home1';
 import { MovieDetails } from 'pages/MovieDetails';
-import { SharedLayout } from './SharedLayout';
-import { Cast } from 'components/Cast';
-import { Reviews } from 'components/Reviews';
+import { SharedLayout } from './SharedLayout1';
+import { Cast } from 'components/Cast1';
+import { Reviews } from 'components/Reviews1';
 
 
 export const App = () => {
