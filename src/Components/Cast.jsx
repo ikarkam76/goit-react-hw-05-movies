@@ -22,7 +22,7 @@ export const Cast = () => {
           <div key={item.credit_id}>
             <ActorImg
               src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
-              alt={`Foto of ${item.character}`}
+              alt={`Foto of ${item.name}`}
             />
             <h4>{item.name}</h4>
             <p>Character: {item.character}</p>

@@ -8,7 +8,7 @@ export const Home = () => {
   const [movies, setMovies] = useState([]);
  
   useEffect(() => {
-    getMovies('trending/movie/day').then(response => {
+    getMovies().then(response => {
       setMovies(response.data.results);
     });
   }, [])

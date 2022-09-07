@@ -2,6 +2,7 @@
 import { Container, Img, InfoContainer } from "Components/CardContainer.styled";
 
 export const CardContainer = ({ movie }) => {
+
     return (
       <Container>
         <Img

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams, Outlet } from "react-router-dom";
+import { Link, useParams, Outlet, useLocation } from "react-router-dom";
 import { getMovieByID } from "Services/getmovies";
 import { CardContainer} from 'Components/CardContainer';
+import { BackLink } from 'Components/BackLink';
 
 
 
@@ -9,6 +10,9 @@ import { CardContainer} from 'Components/CardContainer';
 export const MovieDetails = () => {
   const {movieId} = useParams();
   const [movie, setMovie] = useState(null);
+  const location = useLocation();
+  const backHref = location.state?.from ?? '/movies';
+
   
     useEffect(() => {
       getMovieByID(Number(movieId)).then(res => setMovie(res.data));
@@ -17,9 +21,10 @@ export const MovieDetails = () => {
   if (!movie) {
     return null;
   } 
-  
+
   return (
     <main>
+      <BackLink to={backHref}>⬅️ Back to movies</BackLink>
       <CardContainer movie={movie} />
       <ul>
         <li>
