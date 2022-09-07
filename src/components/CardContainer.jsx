@@ -1,5 +1,5 @@
 
-import { Container, Img, InfoContainer } from "./CardContainer.styled";
+import { Container, Img, InfoContainer } from "components/CardContainer.styled";
 
 export const CardContainer = ({ movie }) => {
     return (
