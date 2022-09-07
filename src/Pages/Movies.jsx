@@ -1,4 +1,4 @@
-import { SearchBox } from 'Components1/SearchBox';
+import { SearchBox } from 'Components/SearchBox';
 import { Outlet } from 'react-router-dom';
 
 export const Movies = () => {

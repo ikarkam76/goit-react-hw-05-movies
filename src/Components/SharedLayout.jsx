@@ -1,5 +1,5 @@
 
-import { Container, Header, Logo, Link } from 'Components1/SharedLayout.styled';
+import { Container, Header, Logo, Link } from 'Components/SharedLayout.styled';
 import { Outlet } from 'react-router-dom';
 
 
