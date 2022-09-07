@@ -17,6 +17,7 @@ export const MovieDetails = () => {
   if (!movie) {
     return null;
   } 
+  
   return (
     <main>
       <CardContainer movie={movie} />
