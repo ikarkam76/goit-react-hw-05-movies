@@ -11,7 +11,7 @@ export const MovieDetails = () => {
   const {movieId} = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
-  const backHref = location.state?.from ?? '/movies';
+  const backHref = location.state?.from ?? '/';
 
   
     useEffect(() => {
@@ -24,14 +24,14 @@ export const MovieDetails = () => {
 
   return (
     <main>
-      <BackLink to={backHref}>⬅️ Back to movies</BackLink>
+      <BackLink to={backHref}>⬅️ Go back</BackLink>
       <CardContainer movie={movie} />
       <ul>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link to="cast" state={{ from: backHref }}>Cast</Link>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link to="reviews" state={{ from: backHref }}>Reviews</Link>
         </li>
       </ul>
       <Outlet />

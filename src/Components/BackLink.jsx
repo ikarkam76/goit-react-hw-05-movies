@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom"
-
+import { StyledLink } from "Components/BackLink.styled";
 
 export const BackLink = ({to, children}) => {
     return (
-        <Link to={to}>
+        <StyledLink to={to}>
             {children}
-        </Link>
+        </StyledLink>
     )
 }

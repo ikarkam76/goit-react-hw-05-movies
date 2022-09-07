@@ -26,7 +26,7 @@ export const getMovieByID = async (id) => {
 export const getMovieByName = async (query) => {
   try {
     const response = await axios.get(
-      `${API_URL}${query}/movie?api_key=${API_KEY}`
+      `${API_URL}search/movie?api_key=${API_KEY}&query=${query}`
     );
     return response;
   } catch (error) {

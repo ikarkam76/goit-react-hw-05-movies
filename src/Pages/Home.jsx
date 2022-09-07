@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { getMovies } from "Services/getmovies";
 import { useState, useEffect } from "react";
 import { HomeContainer } from "Pages/Home.styled";
@@ -6,7 +6,8 @@ import { HomeContainer } from "Pages/Home.styled";
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);
- 
+  const location = useLocation();
+
   useEffect(() => {
     getMovies().then(response => {
       setMovies(response.data.results);
@@ -20,7 +21,9 @@ export const Home = () => {
         {movies.map(({id ,title}) => {
           return (
             <li key={id}>
-              <Link to={`/movies/${id}`}>{title}</Link>
+              <Link to={`/movies/${id}`} state={{ from: location }}>
+                {title}
+              </Link>
             </li>
           );
        })}
