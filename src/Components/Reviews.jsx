@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieReviewsById } from 'Services/getmovies';
+import { ReviewItem } from './Reviews.styled';
 
 export const Reviews = () => {
   const { movieId } = useParams();
@@ -11,21 +12,29 @@ export const Reviews = () => {
   }, [movieId]);
 
   if (!reviews) {
-    return <h4>Loading...</h4>
+    return (
+      <ReviewItem>
+        <h4>Loading...</h4>
+      </ReviewItem>
+    );
   }
   
   if (reviews.length === 0) {
-    return <h4>We dont find any reviews about this movie</h4>
+    return (
+      <ReviewItem>
+        <h4>We dont find any reviews about this movie</h4>
+      </ReviewItem>
+    );
   }
 
   return (
     <main>
       {reviews.map(item => {
         return (
-          <div key={item.id}>
+          <ReviewItem key={item.id}>
             <h4> 📝 Review from {item.author}</h4>
             <p>{item.content}</p>
-          </div>
+          </ReviewItem>
         );
       })}
     </main>

@@ -3,6 +3,7 @@ import { Link, useParams, Outlet, useLocation } from "react-router-dom";
 import { getMovieByID } from "Services/getmovies";
 import { CardContainer} from 'Components/CardContainer';
 import { BackLink } from 'Components/BackLink';
+import { LinkContainer } from './MovieDetails.styled';
 
 
 
@@ -26,14 +27,20 @@ export const MovieDetails = () => {
     <main>
       <BackLink to={backHref}>⬅️ Go back</BackLink>
       <CardContainer movie={movie} />
-      <ul>
-        <li>
-          <Link to="cast" state={{ from: backHref }}>Cast</Link>
-        </li>
-        <li>
-          <Link to="reviews" state={{ from: backHref }}>Reviews</Link>
-        </li>
-      </ul>
+      <LinkContainer>
+        <ul>
+          <li>
+            <Link to="cast" state={{ from: backHref }}>
+              Cast
+            </Link>
+          </li>
+          <li>
+            <Link to="reviews" state={{ from: backHref }}>
+              Reviews
+            </Link>
+          </li>
+        </ul>
+      </LinkContainer>
       <Outlet />
     </main>
   );

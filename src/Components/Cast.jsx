@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCastById } from 'Services/getmovies';
-import { ActorImg } from 'Components/Cast.styled';
+import { ActorImg, CastItem } from 'Components/Cast.styled';
 
 export const Cast = () => {
   const { movieId } = useParams();
@@ -20,14 +20,14 @@ export const Cast = () => {
       <ul>
         {actors.map(item => {
           return (
-            <li key={item.credit_id}>
+            <CastItem key={item.credit_id}>
               <ActorImg
                 src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
                 alt={`Foto of ${item.name}`}
               />
-              <h4>{item.name}</h4>
+              <h3>{item.name}</h3>
               <p>Character: {item.character}</p>
-            </li>
+            </CastItem>
           );
         })}
       </ul>

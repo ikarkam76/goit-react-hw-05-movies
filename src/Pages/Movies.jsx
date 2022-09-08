@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { Outlet, useSearchParams, Link, useLocation } from 'react-router-dom';
 import { getMovieByName } from 'Services/getmovies';
+import { MoviesContainer } from 'Pages/Movies.styled';
 
 export const Movies = () => {
   const [movies, setMovies] = useState(null);
@@ -26,18 +27,17 @@ export const Movies = () => {
 
   if (!movies) {
     return (
-      <div>
+      <MoviesContainer>
         <Outlet />
         <SearchBox sendSearchName={changeSearch} />
-      </div>
+      </MoviesContainer>
     );
   }
     return (
-      <div>
+      <MoviesContainer>
         <Outlet />
         <SearchBox sendSearchName={changeSearch} />
         <ul>
-          
           {movies.map(({ id, title }) => {
             return (
               <li key={id}>
@@ -48,6 +48,6 @@ export const Movies = () => {
             );
           })}
         </ul>
-      </div>
+      </MoviesContainer>
     );
 }

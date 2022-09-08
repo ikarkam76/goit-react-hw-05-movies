@@ -1,11 +1,6 @@
 import styled from '@emotion/styled';
 
-export const ActorImg = styled.img`
-  height: 150px;
-  border-radius: 4px;
-`;
-
-export const CastItem = styled.li`
+export const ReviewItem = styled.div`
   padding: 10px;
   padding-left: 15px;
   border-radius: 4px;
