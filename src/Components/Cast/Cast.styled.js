@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const ActorImg = styled.img`
+  margin-right: 20px;
   height: 150px;
   border-radius: 4px;
 `;
@@ -14,6 +15,7 @@ export const CastContainer = styled.div`
 `;
 
 export const CastItem = styled.li`
+  display: flex;
   padding: 10px;
   padding-left: 15px;
   border-radius: 4px;

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovieCastById } from 'Services/getmovies';
 import { ActorImg, CastContainer, CastItem } from 'Components/Cast/Cast.styled';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [actors, setActors] = useState(null);
 
@@ -26,8 +26,10 @@ export const Cast = () => {
                 src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
                 alt={`Foto of ${item.name}`}
               />
-              <h3>{item.name}</h3>
-              <p>Character: {item.character}</p>
+              <div>
+                <h3>{item.name}</h3>
+                <p>Character: {item.character}</p>
+              </div>
             </CastItem>
           );
         })}
@@ -35,3 +37,4 @@ export const Cast = () => {
     </CastContainer>
   );
 };
+export default Cast;

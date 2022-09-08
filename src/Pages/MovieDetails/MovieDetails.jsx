@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Link, useParams, Outlet, useLocation } from "react-router-dom";
 import { getMovieByID } from "Services/getmovies";
 import { CardContainer} from 'Components/CardContainer/CardContainer';
@@ -8,7 +8,7 @@ import { LinkContainer } from './MovieDetails.styled';
 
 
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const {movieId} = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
@@ -41,7 +41,10 @@ export const MovieDetails = () => {
           </li>
         </ul>
       </LinkContainer>
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </main>
   );
 }
+export default MovieDetails;

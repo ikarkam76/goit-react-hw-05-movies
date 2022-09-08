@@ -5,7 +5,7 @@ import { Outlet, useSearchParams, Link, useLocation } from 'react-router-dom';
 import { getMovieByName } from 'Services/getmovies';
 import { MoviesContainer } from 'Pages/Movies/Movies.styled';
 
-export const Movies = () => {
+const Movies = () => {
   const [movies, setMovies] = useState(null);
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -51,3 +51,5 @@ export const Movies = () => {
       </MoviesContainer>
     );
 }
+
+export default Movies;
