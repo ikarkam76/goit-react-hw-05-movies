@@ -1,4 +1,4 @@
-import { StyledLink } from "Components/BackLink.styled";
+import { StyledLink } from "Components/BackLink/BackLink.styled";
 
 export const BackLink = ({to, children}) => {
     return (

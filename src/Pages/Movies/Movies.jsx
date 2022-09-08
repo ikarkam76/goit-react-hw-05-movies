@@ -1,9 +1,9 @@
-import { SearchBox } from 'Components/SearchBox';
+import { SearchBox } from 'Components/SearchBox/SearchBox';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Outlet, useSearchParams, Link, useLocation } from 'react-router-dom';
 import { getMovieByName } from 'Services/getmovies';
-import { MoviesContainer } from 'Pages/Movies.styled';
+import { MoviesContainer } from 'Pages/Movies/Movies.styled';
 
 export const Movies = () => {
   const [movies, setMovies] = useState(null);

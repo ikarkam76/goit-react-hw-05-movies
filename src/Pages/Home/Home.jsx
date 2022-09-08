@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { getMovies } from "Services/getmovies";
 import { useState, useEffect } from "react";
-import { HomeContainer } from "Pages/Home.styled";
+import { HomeContainer } from "Pages/Home/Home.styled";
 
 
 export const Home = () => {

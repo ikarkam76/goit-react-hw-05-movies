@@ -1,4 +1,4 @@
-import { Input, SearchButton, Wrapper } from "Components/SearchBox.styled";
+import { Input, SearchButton, Wrapper } from "Components/SearchBox/SearchBox.styled";
 import { useState } from "react";
 
 

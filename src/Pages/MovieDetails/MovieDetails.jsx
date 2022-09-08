@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams, Outlet, useLocation } from "react-router-dom";
 import { getMovieByID } from "Services/getmovies";
-import { CardContainer} from 'Components/CardContainer';
-import { BackLink } from 'Components/BackLink';
+import { CardContainer} from 'Components/CardContainer/CardContainer';
+import { BackLink } from 'Components/BackLink/BackLink';
 import { LinkContainer } from './MovieDetails.styled';
 
 
