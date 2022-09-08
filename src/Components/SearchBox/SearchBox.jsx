@@ -1,6 +1,6 @@
 import { Input, SearchButton, Wrapper } from "Components/SearchBox/SearchBox.styled";
 import { useState } from "react";
-
+import PropTypes from 'prop-types';
 
 export const SearchBox = ({sendSearchName}) => {
   const [searchName, setSearchName] = useState('');
@@ -22,3 +22,7 @@ export const SearchBox = ({sendSearchName}) => {
     </Wrapper>
   );
 }; 
+
+SearchBox.propTypes = {
+  sendSearchName: PropTypes.func.isRequired,
+}
