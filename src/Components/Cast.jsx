@@ -12,23 +12,25 @@ export const Cast = () => {
   }, [movieId]);
 
   if (!actors) {
-    return null;
+    return <h4>Loading...</h4>;
   }
 
   return (
     <div>
-      {actors.map(item => {
-        return (
-          <div key={item.credit_id}>
-            <ActorImg
-              src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
-              alt={`Foto of ${item.name}`}
-            />
-            <h4>{item.name}</h4>
-            <p>Character: {item.character}</p>
-          </div>
-        );
-      })}
+      <ul>
+        {actors.map(item => {
+          return (
+            <li key={item.credit_id}>
+              <ActorImg
+                src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
+                alt={`Foto of ${item.name}`}
+              />
+              <h4>{item.name}</h4>
+              <p>Character: {item.character}</p>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };

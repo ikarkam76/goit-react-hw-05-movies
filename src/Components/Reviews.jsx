@@ -11,7 +11,11 @@ export const Reviews = () => {
   }, [movieId]);
 
   if (!reviews) {
-    return <h4>We don`t have any reviews for this movie</h4>;
+    return <h4>Loading...</h4>
+  }
+  
+  if (reviews.length === 0) {
+    return <h4>We dont find any reviews about this movie</h4>
   }
 
   return (
@@ -28,11 +32,3 @@ export const Reviews = () => {
   );
 };
 
-
-// author:"NancyLDraper@gmail.com"
-// author_details: {name: '', username: 'NancyLDraper@gmail.com', avatar_path: null, rating: 8}
-// content: "By January 2022,out of 10. [Drama]"
-// created_at: "2022-07-16T14:57:32.259Z"
-// id:"62d2d1dcd399e6004bfb74f6"
-// updated_at:"2022-07-26T14:22:09.164Z"
-// url:"https://www.themoviedb.org/review/62d2d1dcd399e6004bfb74f6"
